@@ -1,6 +1,6 @@
-# LidLifter - Prevent your MacBook from going to sleep when on AC.
+# LidLifter - Prevent macOS from going to sleep when on AC.
 
-LidLifter is a macOS LaunchDaemon crafted to keep your MacBook awake when in Clamshell mode, particularly when connected to AC power.
+LidLifter is a macOS LaunchDaemon crafted to keep your MacBook awake when in Clamshell mode (lid closed), particularly when connected to AC power.
 It prevents your MacBook from sleeping with the lid closed, ensuring uninterrupted workflows for developers, presenters, and users of external displays.
 
 Beyond MacBooks, LidLifter extends its utility to any macOS device connected to AC power, allowing users to maintain continuous operation even when the lid is closed.
