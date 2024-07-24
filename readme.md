@@ -6,10 +6,7 @@ It prevents your MacBook from sleeping with the lid closed, ensuring uninterrupt
 Beyond MacBooks, LidLifter extends its utility to any macOS device connected to AC power, allowing users to maintain continuous operation even when the lid is closed.
 Whether you're presenting slides, running lengthy computations, or managing servers remotely, LidLifter provides the reliability you need.
 
-
-## Installation
-
-### Installing LidLifter
+## Installing LidLifter
 
 To install LidLifter onto your macOS system:
 
@@ -28,7 +25,41 @@ To install LidLifter onto your macOS system:
      sudo launchctl load -w /Library/LaunchDaemons/au.byrnes.jd.lidlifter.plist
      ```
 
-### Uninstallation
+## Checking if LidLifter is Running
+
+1. **Open Terminal.**
+
+2. **Check the LaunchDaemon status:**
+   - Check the current state of LidLifter:
+     ```bash
+     sudo launchctl print system/au.byrnes.jd.lidlifter | grep 'job state'
+     ```
+
+## Disabling LidLifter
+
+To temporarily disable LidLifter and allow macOS to sleep when connected to AC power:
+
+1. **Open Terminal.**
+
+2. **Unload the LaunchDaemon:**
+   - Stop LidLifter from preventing macOS from sleeping.
+     ```bash
+     sudo launchctl unload -w /Library/LaunchDaemons/au.byrnes.jd.lidlifter.plist
+     ````
+
+## Enabling LidLifter
+
+To enable LidLifter again after disabling it:
+
+1. **Open Terminal.**
+
+2. **Load the LaunchDaemon:**
+   - Start LidLifter to prevent macOS from sleeping when connected to AC power:
+     ```bash
+     sudo launchctl load -w /Library/LaunchDaemons/au.byrnes.jd.lidlifter.plist
+     ```
+
+## Uninstalling LidLifter
 
 To uninstall LidLifter from your macOS system:
 
@@ -44,40 +75,4 @@ To uninstall LidLifter from your macOS system:
    - Delete `au.byrnes.jd.lidlifter.plist` from `/Library/LaunchDaemons/`:
      ```bash
      sudo rm /Library/LaunchDaemons/au.byrnes.jd.lidlifter.plist
-     ```
-
-## Managing LidLifter on macOS
-
-### Disabling LidLifter
-
-To temporarily disable LidLifter and allow macOS to sleep when connected to AC power:
-
-1. **Open Terminal.**
-
-2. **Unload the LaunchDaemon:**
-   - Stop LidLifter from preventing macOS from sleeping.
-     ```bash
-     sudo launchctl unload -w /Library/LaunchDaemons/au.byrnes.jd.lidlifter.plist
-     ````
-
-### Enabling LidLifter
-
-To enable LidLifter again after disabling it:
-
-1. **Open Terminal.**
-
-2. **Load the LaunchDaemon:**
-   - Start LidLifter to prevent macOS from sleeping when connected to AC power:
-     ```bash
-     sudo launchctl load -w /Library/LaunchDaemons/au.byrnes.jd.lidlifter.plist
-     ```
-
-### Checking if LidLifter is Running
-
-1. **Open Terminal.**
-
-2. **Check if LidLifter is running:**
-   - Check the LaunchDaemon status:
-     ```bash
-     sudo launchctl print system/au.byrnes.jd.lidlifter | grep 'job state'
      ```
